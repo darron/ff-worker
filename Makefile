@@ -10,3 +10,8 @@ build:
 .PHONY: deploy
 deploy:
 	wrangler deploy
+
+.PHONY: deps
+deps: ## Install all dependencies.
+	go mod vendor
+	go mod tidy -compat=1.21
